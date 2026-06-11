@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-11T00:42:00-03:00",
+  "title": "Design System: Tarcila Costa — Psicóloga",
+  "extensions": {
+    "colorMeta": {
+      "brand": { "role": "primary", "displayName": "Marrom-Terra", "canonical": "#6D3D2B", "tonalRamp": ["#2D1810", "#4A281B", "#5E3222", "#6D3D2B", "#8B5E4C", "#A67A6A", "#C29A8C", "#E0C9BF"] },
+      "brand-light": { "role": "primary", "displayName": "Marrom-Médio", "canonical": "#8B5E4C", "tonalRamp": ["#3D281F", "#5E3D30", "#7A5040", "#8B5E4C", "#A07766", "#B59182", "#C9ADA0", "#E1CCC3"] },
+      "brand-dark": { "role": "primary", "displayName": "Marrom-Profundo", "canonical": "#4A281B", "tonalRamp": ["#1A0E09", "#2D1810", "#3C2015", "#4A281B", "#6B3E2D", "#8B5E4C", "#A67A6A", "#C9ADA0"] },
+      "sand": { "role": "neutral", "displayName": "Areia", "canonical": "#F4EFEA", "tonalRamp": ["#5C554E", "#7D746C", "#A0988E", "#C0B8AE", "#D8D1C8", "#E8E2DA", "#F4EFEA", "#FAF8F5"] },
+      "sand-dark": { "role": "neutral", "displayName": "Areia-Escura", "canonical": "#E8DFD6", "tonalRamp": ["#544D45", "#736B62", "#948B80", "#B3A99D", "#CCC3B8", "#E0D7CE", "#E8DFD6", "#F2EBE4"] },
+      "accent": { "role": "accent", "displayName": "Terracota", "canonical": "#C8785A", "tonalRamp": ["#5A3122", "#7D452F", "#A25B3E", "#C8785A", "#D68F72", "#E2A88E", "#EDC2AE", "#F7DDD1"] },
+      "accent-light": { "role": "accent", "displayName": "Terracota-Clara", "canonical": "#D99B7A", "tonalRamp": ["#6B3D27", "#8F5538", "#B36F4C", "#D99B7A", "#E2AE8F", "#EBC2A8", "#F3D7C3", "#FBEDE2"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero h1 exclusivamente. Máximo 12 palavras. text-wrap: balance." },
+      "headline": { "displayName": "Headline", "purpose": "Títulos de seção (h2). text-wrap: balance." },
+      "title": { "displayName": "Title", "purpose": "Títulos de card, serviço, passo." },
+      "body": { "displayName": "Body", "purpose": "Parágrafos e descrições. Largura máxima 75ch. text-wrap: pretty." },
+      "label": { "displayName": "Label", "purpose": "Subtítulos, navegação, tags. Uppercase com tracking." }
+    },
+    "shadows": [
+      { "name": "cta-shadow", "value": "0 4px 14px rgba(109, 61, 43, 0.2)", "purpose": "Sombra padrão de botões primários." },
+      { "name": "cta-shadow-hover", "value": "0 6px 20px rgba(109, 61, 43, 0.3)", "purpose": "Sombra de hover de botões primários." },
+      { "name": "image-shadow", "value": "0 25px 50px rgba(0, 0, 0, 0.15)", "purpose": "Sombra de container de imagem (hero, sobre)." },
+      { "name": "float-shadow", "value": "0 10px 25px rgba(0, 0, 0, 0.15)", "purpose": "Sombra do botão flutuante WhatsApp." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.25, 0.1, 0.25, 1)", "purpose": "Easing padrão para transições de estado." },
+      { "name": "ease-in-out", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Easing para acordeão e expansões." },
+      { "name": "duration-state", "value": "200ms", "purpose": "Duração padrão de transições de estado (hover, foco)." },
+      { "name": "duration-reveal", "value": "500ms", "purpose": "Duração de animações de entrada (framer-motion)." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "CTA primário para agendamento via WhatsApp. Usado no hero, no final de seções.",
+      "html": "<a href=\"#\" class=\"ds-btn-primary\" target=\"_blank\" rel=\"noopener noreferrer\">\n  Agendar Primeira Sessão\n  <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg>\n</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #6D3D2B; color: #fff; font-family: Inter, system-ui, sans-serif; font-size: 1rem; font-weight: 500; padding: 16px 28px; border-radius: 12px; border: none; cursor: pointer; text-decoration: none; transition: background 0.2s, box-shadow 0.2s; box-shadow: 0 4px 14px rgba(109,61,43,0.2); } .ds-btn-primary:hover { background: #8B5E4C; box-shadow: 0 6px 20px rgba(109,61,43,0.3); } .ds-btn-primary:focus-visible { outline: 2px solid #6D3D2B; outline-offset: 2px; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Botão secundário para links de navegação interna (\"Conhecer mais\").",
+      "html": "<a href=\"#\" class=\"ds-btn-outline\">Conhecer mais</a>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: transparent; color: #6D3D2B; font-family: Inter, system-ui, sans-serif; font-size: 1rem; font-weight: 500; padding: 16px 28px; border-radius: 12px; border: 2px solid rgba(109,61,43,0.2); cursor: pointer; text-decoration: none; transition: background 0.2s; } .ds-btn-outline:hover { background: rgba(109,61,43,0.05); } .ds-btn-outline:focus-visible { outline: 2px solid #6D3D2B; outline-offset: 2px; }"
+    },
+    {
+      "name": "Service Card",
+      "kind": "card",
+      "refersTo": "card-service",
+      "description": "Card de serviço com ícone, título e descrição. Grid 4 colunas em desktop, 2 em tablet, 1 em mobile.",
+      "html": "<div class=\"ds-card-service\">\n  <div class=\"ds-icon-container\">\n    <svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 20h9\"/><path d=\"M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z\"/></svg>\n  </div>\n  <h3 class=\"ds-card-title\">Psicoterapia (TCC)</h3>\n  <p class=\"ds-card-desc\">Terapia Cognitivo-Comportamental com foco em identificar e modificar padrões de pensamentos disfuncionais.</p>\n</div>",
+      "css": ".ds-card-service { background: #F4EFEA; border: 1px solid #E8DFD6; border-radius: 12px; padding: 32px; transition: background 0.3s, border-color 0.3s; } .ds-card-service:hover { background: rgba(109,61,43,0.05); border-color: rgba(109,61,43,0.2); } .ds-icon-container { width: 56px; height: 56px; border-radius: 12px; background: rgba(109,61,43,0.1); color: #6D3D2B; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; transition: background 0.3s, color 0.3s; } .ds-card-service:hover .ds-icon-container { background: #6D3D2B; color: #fff; } .ds-card-title { font-family: Lora, Georgia, serif; font-size: 1.25rem; font-weight: 600; color: #6D3D2B; line-height: 1.3; margin: 0 0 12px 0; } .ds-card-desc { font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; color: #8B5E4C; line-height: 1.625; margin: 0; }"
+    },
+    {
+      "name": "Step Timeline Item",
+      "kind": "custom",
+      "refersTo": "step-number",
+      "description": "Item numerado de timeline vertical (Avaliação Neuropsicológica). Passo numerado + título + descrição.",
+      "html": "<div class=\"ds-step\">\n  <div class=\"ds-step-number\">1</div>\n  <div class=\"ds-step-content\">\n    <div class=\"ds-step-header\">\n      <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#C8785A\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 6 9 17l-5-5\"/></svg>\n      <h3 class=\"ds-step-title\">Entrevista Inicial</h3>\n    </div>\n    <p class=\"ds-step-desc\">Conversa aprofundada para entender sua história, queixas e objetivos.</p>\n  </div>\n</div>",
+      "css": ".ds-step { display: flex; gap: 32px; } .ds-step-number { flex-shrink: 0; width: 64px; height: 64px; border-radius: 12px; background: #6D3D2B; color: #fff; display: flex; align-items: center; justify-content: center; font-family: Lora, Georgia, serif; font-size: 1.125rem; font-weight: 700; box-shadow: 0 4px 14px rgba(109,61,43,0.2); } .ds-step-content { flex: 1; padding-top: 12px; } .ds-step-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; } .ds-step-title { font-family: Lora, Georgia, serif; font-size: 1.25rem; font-weight: 600; color: #6D3D2B; margin: 0; } .ds-step-desc { font-family: Inter, system-ui, sans-serif; font-size: 1rem; color: #8B5E4C; line-height: 1.625; margin: 0; }"
+    },
+    {
+      "name": "FAQ Accordion",
+      "kind": "custom",
+      "refersTo": "faq-item",
+      "description": "Item de FAQ expansível com accordion de seleção única.",
+      "html": "<div class=\"ds-faq-item\">\n  <button class=\"ds-faq-btn\" aria-expanded=\"false\">\n    <span>Como funciona a Terapia Cognitivo-Comportamental (TCC)?</span>\n    <svg class=\"ds-faq-icon\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#8B5E4C\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m6 9 6 6 6-6\"/></svg>\n  </button>\n  <div class=\"ds-faq-content\">\n    <p>A TCC é uma abordagem estruturada e focada no presente. Trabalhamos juntos para identificar pensamentos automáticos e crenças que geram sofrimento.</p>\n  </div>\n</div>",
+      "css": ".ds-faq-item { background: #fff; border: 1px solid #E8DFD6; border-radius: 12px; overflow: hidden; } .ds-faq-btn { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; background: none; border: none; cursor: pointer; text-align: left; font-family: Inter, system-ui, sans-serif; font-size: 1rem; font-weight: 500; color: #6D3D2B; transition: background 0.2s; } .ds-faq-btn:hover { background: rgba(109,61,43,0.05); } .ds-faq-icon { flex-shrink: 0; transition: transform 0.3s; } .ds-faq-btn[aria-expanded='true'] .ds-faq-icon { transform: rotate(180deg); } .ds-faq-content { padding: 0 24px 20px 24px; } .ds-faq-content p { font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; color: #8B5E4C; line-height: 1.625; margin: 0; }"
+    },
+    {
+      "name": "Nav Link Desktop",
+      "kind": "nav",
+      "refersTo": "button-ghost-nav",
+      "description": "Link de navegação no header desktop. Ghost-style com hover sutil.",
+      "html": "<nav class=\"ds-nav\">\n  <a href=\"#\" class=\"ds-nav-link\">Sobre</a>\n  <a href=\"#\" class=\"ds-nav-link\">Serviços</a>\n  <a href=\"#\" class=\"ds-nav-link ds-nav-link-active\">Avaliação</a>\n  <a href=\"#\" class=\"ds-nav-link\">FAQ</a>\n  <a href=\"#\" class=\"ds-nav-link\">Contato</a>\n</nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 4px; } .ds-nav-link { font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; color: #8B5E4C; padding: 8px 12px; border-radius: 8px; text-decoration: none; transition: background 0.2s, color 0.2s; } .ds-nav-link:hover { background: rgba(109,61,43,0.05); color: #6D3D2B; } .ds-nav-link:focus-visible { outline: 2px solid #6D3D2B; outline-offset: 2px; } .ds-nav-link-active { color: #6D3D2B; }"
+    },
+    {
+      "name": "Tag Pill",
+      "kind": "chip",
+      "refersTo": "tag-pill",
+      "description": "Tags de especialidades e modalidades. Passivas (não clicáveis), usadas em grids wrap.",
+      "html": "<div class=\"ds-tags\">\n  <span class=\"ds-tag\">TCC</span>\n  <span class=\"ds-tag\">Neuropsicologia</span>\n  <span class=\"ds-tag\">Infantojuvenil</span>\n  <span class=\"ds-tag\">Adulto</span>\n  <span class=\"ds-tag\">Idoso</span>\n</div>",
+      "css": ".ds-tags { display: flex; flex-wrap: wrap; gap: 8px; } .ds-tag { font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; color: #6D3D2B; background: rgba(109,61,43,0.05); padding: 6px 16px; border-radius: 9999px; }"
+    },
+    {
+      "name": "Contact Info Row",
+      "kind": "custom",
+      "refersTo": "icon-container",
+      "description": "Linha de informação de contato com ícone em container arredondado.",
+      "html": "<div class=\"ds-contact-row\">\n  <div class=\"ds-contact-icon\">\n    <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z\"/><circle cx=\"12\" cy=\"10\" r=\"3\"/></svg>\n  </div>\n  <div>\n    <h4 class=\"ds-contact-label\">Endereço</h4>\n    <p class=\"ds-contact-value\">Dionísio Torres, Fortaleza-CE</p>\n  </div>\n</div>",
+      "css": ".ds-contact-row { display: flex; align-items: flex-start; gap: 16px; } .ds-contact-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(109,61,43,0.1); color: #6D3D2B; display: flex; align-items: center; justify-content: center; flex-shrink: 0; } .ds-contact-label { font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; font-weight: 600; color: #6D3D2B; margin: 0 0 4px 0; } .ds-contact-value { font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; color: #8B5E4C; line-height: 1.5; margin: 0; }"
+    },
+    {
+      "name": "Header",
+      "kind": "nav",
+      "refersTo": "button-ghost-nav",
+      "description": "Header fixo com logo, navegação e CTA. Backdrop blur no scroll.",
+      "html": "<header class=\"ds-header\">\n  <div class=\"ds-header-inner\">\n    <a href=\"#\" class=\"ds-logo\">\n      <div class=\"ds-logo-icon\">\n        <svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"#6D3D2B\"><circle cx=\"12\" cy=\"12\" r=\"10\"/></svg>\n      </div>\n      <div class=\"ds-logo-text\">\n        <span class=\"ds-logo-name\">Tarcila Costa</span>\n        <span class=\"ds-logo-crp\">CRP 11/22251</span>\n      </div>\n    </a>\n    <nav class=\"ds-nav\">\n      <a href=\"#\" class=\"ds-nav-link\">Sobre</a>\n      <a href=\"#\" class=\"ds-nav-link\">Serviços</a>\n      <a href=\"#\" class=\"ds-nav-link\">Avaliação</a>\n      <a href=\"#\" class=\"ds-nav-link\">FAQ</a>\n      <a href=\"#\" class=\"ds-nav-link\">Contato</a>\n      <a href=\"#\" class=\"ds-btn-primary ds-btn-header\">Agendar</a>\n    </nav>\n  </div>\n</header>",
+      "css": ".ds-header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(244,239,234,0.9); backdrop-filter: blur(12px); border-bottom: 1px solid #E8DFD6; } .ds-header-inner { max-width: 1152px; margin: 0 auto; padding: 0 20px; height: 64px; display: flex; align-items: center; } .ds-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; } .ds-logo-icon { width: 40px; height: 40px; border-radius: 50%; background: rgba(109,61,43,0.1); display: flex; align-items: center; justify-content: center; } .ds-logo-text { display: none; } @media (min-width: 768px) { .ds-logo-text { display: block; } } .ds-logo-name { font-family: Lora, Georgia, serif; font-size: 1.125rem; font-weight: 600; color: #6D3D2B; display: block; line-height: 1.2; } .ds-logo-crp { font-family: Inter, system-ui, sans-serif; font-size: 0.75rem; color: #8B5E4C; } .ds-nav { display: none; align-items: center; gap: 4px; margin-left: auto; } @media (min-width: 768px) { .ds-nav { display: flex; } } .ds-btn-header { padding: 8px 16px !important; font-size: 0.875rem !important; margin-left: 8px; }"
+    },
+    {
+      "name": "WhatsApp Float Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Botão flutuante fixo no canto inferior direito para contato rápido via WhatsApp.",
+      "html": "<a href=\"#\" class=\"ds-whatsapp-float\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"Fale pelo WhatsApp\">\n  <svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z\"/></svg>\n</a>",
+      "css": ".ds-whatsapp-float { position: fixed; bottom: 24px; right: 24px; z-index: 50; width: 56px; height: 56px; border-radius: 50%; background: #22C55E; color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0,0,0,0.15); text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; animation: pulse 2s ease-in-out infinite; } .ds-whatsapp-float:hover { transform: scale(1.1); animation: none; } .ds-whatsapp-float:focus-visible { outline: 2px solid #22C55E; outline-offset: 2px; } @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } } @media (prefers-reduced-motion: reduce) { .ds-whatsapp-float { animation: none; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "O Labirinto Acolhedor: A Jornada como Mapa",
+    "overview": "Este sistema visual traduz o cuidado psicológico em forma: acolhedor sem ser sentimental, profissional sem ser frio, pessoal sem ser invasivo. As cores terrosas e a tipografia contrastante (serifada para títulos, humanista para corpo) criam uma sala de estar visual — espaçosa, tranquila, segura. Cada decisão existe para reduzir a ansiedade de quem chega: o contraste é generoso, o ritmo é calmo, as bordas são suaves.\n\nO labirinto — símbolo pessoal da marca — informa a estrutura visual: caminhos não lineares, descobertas em vez de instruções, e a confiança de que tentar novos percursos faz parte do processo. O design guia sem apressar.\n\nO sistema rejeita explicitamente o visual corporativo-genérico de plataformas de saúde, a frieza clínica de consultórios médicos e o visual juvenil de marcas trendy de bem-estar.",
+    "keyCharacteristics": [
+      "Paleta terrosa e contida (marrom, areia, terracota) com um único acento coral",
+      "Tipografia contrastante: serifa display Lora + humanista sans Inter",
+      "Cantos suavemente arredondados (12px como padrão)",
+      "Elevação por camadas tonais, não por sombras excessivas",
+      "Ícones como suporte visual, não como decoração principal",
+      "Ritmo vertical generoso (seções de 80px–96px, padding de 32px em cards)",
+      "Foco constante no CTA principal (WhatsApp) como destino natural de cada seção"
+    ],
+    "rules": [
+      { "name": "A Regra do Fundo Único", "body": "O fundo de página é sempre Areia. Seções alternam para branco puro quando precisam de contraste visual. Nunca mais de duas cores de fundo em uma mesma viewport.", "section": "colors" },
+      { "name": "A Regra do Acento Raro", "body": "Terracota ocupa no máximo 5% de qualquer tela. Sua função é pontuar, não preencher.", "section": "colors" },
+      { "name": "A Regra do Peso Semântico", "body": "Títulos usam weight 600 (semibold) exclusivamente. O contraste de tamanho já estabelece a hierarquia.", "section": "typography" },
+      { "name": "A Regra do Corpo Generoso", "body": "Texto body nunca é menor que 1rem (16px) e nunca tem line-height menor que 1.625.", "section": "typography" },
+      { "name": "A Regra Plana por Default", "body": "Superfícies são planas em repouso. Sombras aparecem apenas como resposta a estado.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do usar Marrom-Terra como cor dominante de ação (botões, links principais).",
+      "Do usar Terracota exclusivamente para acentos pequenos ≤5% da tela.",
+      "Do aplicar text-wrap: balance em h1–h3 e text-wrap: pretty em parágrafos longos.",
+      "Do manter o contraste de texto body ≥4.5:1 contra qualquer fundo.",
+      "Do usar Lora para todos os títulos e Inter para todo o corpo.",
+      "Do animar com ease-out e respeitar prefers-reduced-motion com crossfades."
+    ],
+    "donts": [
+      "Don't alterar as cores da marca já definidas (#6D3D2B, #F4EFEA, #C8785A, etc.).",
+      "Don't adicionar cores novas sem necessidade explícita.",
+      "Don't usar sombras em cards ou containers em repouso.",
+      "Don't usar o visual genérico-corporativo de plataformas de saúde.",
+      "Don't usar borda lateral colorida como acento decorativo.",
+      "Don't usar gradient text ou glassmorphism decorativo.",
+      "Don't animar imagens em hover.",
+      "Don't reduzir texto body abaixo de 1rem em mobile."
+    ]
+  }
+}

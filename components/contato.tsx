@@ -15,10 +15,8 @@ export default function Contato() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-2xl mx-auto mb-10"
         >
-          <span className="text-accent text-sm font-semibold uppercase tracking-wider">
-            Contato
-          </span>
-          <h2 className="font-serif text-3xl md:text-4xl text-brand mt-3 mb-4 leading-tight">
+          <div className="w-8 h-px bg-brand/10 mx-auto mb-5" />
+          <h2 className="font-serif text-3xl md:text-4xl text-brand mb-4 leading-tight">
             Vamos conversar?
           </h2>
           <p className="text-brand-light leading-relaxed">
@@ -83,7 +81,7 @@ export default function Contato() {
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-brand text-white font-medium px-8 py-4 rounded-xl hover:bg-brand-light transition-all shadow-lg shadow-brand/20 hover:shadow-xl hover:shadow-brand/30 text-base w-full sm:w-auto"
+                className="inline-flex items-center justify-center gap-2 bg-brand text-white font-medium px-8 py-4 rounded-xl hover:bg-brand-light transition-all shadow-lg shadow-brand/20 hover:shadow-xl hover:shadow-brand/30 text-base w-full sm:w-auto hover:scale-[1.02] active:scale-[0.98]"
               >
                 Quero agendar minha sessão
                 <ArrowRight size={20} />
@@ -98,7 +96,7 @@ export default function Contato() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="bg-sand rounded-xl p-6 md:p-8 border border-sand-dark flex flex-col items-center justify-center text-center h-full"
           >
-            <div className="w-12 h-12 rounded-2xl bg-accent/10 text-accent flex items-center justify-center mb-4">
+            <div className="w-12 h-12 rounded-2xl bg-brand/10 text-brand flex items-center justify-center mb-4">
               <MapPin size={22} />
             </div>
             <h3 className="font-serif text-lg text-brand font-semibold mb-2">
@@ -109,13 +107,13 @@ export default function Contato() {
               sessões on-line para todo o Brasil.
             </p>
             <div className="mt-6 flex flex-wrap gap-2 justify-center">
-              <span className="bg-accent/10 text-accent text-xs font-medium px-3 py-1 rounded-full">
+              <span className="bg-brand/10 text-brand text-xs font-medium px-3 py-1 rounded-full">
                 Presencial
               </span>
-              <span className="bg-accent/10 text-accent text-xs font-medium px-3 py-1 rounded-full">
+              <span className="bg-brand/10 text-brand text-xs font-medium px-3 py-1 rounded-full">
                 On-line
               </span>
-              <span className="bg-accent/10 text-accent text-xs font-medium px-3 py-1 rounded-full">
+              <span className="bg-brand/10 text-brand text-xs font-medium px-3 py-1 rounded-full">
                 Sigilo Garantido
               </span>
             </div>

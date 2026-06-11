@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { contatoInfo, whatsappLink } from "@/data/mock";
@@ -15,19 +15,69 @@ const navLinks = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [logoError, setLogoError] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+  const menuToggleRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const HEADER_H = 64;
+    const OFFSET = 100;
+    const ids = ["sobre", "servicos", "como-funciona", "faq", "contato"];
+
+    const update = () => {
+      const scrollY = window.scrollY + HEADER_H + OFFSET;
+      let current = "";
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= scrollY) {
+          current = id;
+        }
+      }
+      setActiveSection(current);
+    };
+
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
+  }, []);
+
+  const scrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const id = href.replace("#", "");
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.location.assign(href);
+    }
+    setMenuOpen(false);
+    menuToggleRef.current?.focus();
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-sand/90 backdrop-blur-md border-b border-sand-dark">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-white focus:text-brand focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg"
+      >
+        Pular para conteúdo
+      </a>
       <div className="max-w-6xl mx-auto px-5 h-16 flex items-center">
         <a href="#" className="flex items-center gap-3 flex-shrink-0">
           <div className="relative w-10 h-10 rounded-full bg-brand/10 flex items-center justify-center overflow-hidden">
-            <Image
-              src="/images/logo-tarcila.png?v=2"
-              alt="Tarcila Costa"
-              width={40}
-              height={40}
-              className="object-contain"
-            />
+            {logoError ? (
+              <span className="font-serif text-sm text-brand font-semibold">TC</span>
+            ) : (
+              <Image
+                src="/images/logo-tarcila.png?v=2"
+                alt="Tarcila Costa"
+                width={40}
+                height={40}
+                className="object-contain"
+                style={{ width: "auto", height: "auto" }}
+                onError={() => setLogoError(true)}
+              />
+            )}
           </div>
           <div className="hidden md:block">
             <span className="font-serif text-lg text-brand font-semibold leading-tight block">
@@ -49,24 +99,30 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-1 ml-auto">
           {navLinks.map((link) => (
             <a
-              key={link.href}
-              href={link.href}
-              className="px-3 py-2 text-sm text-brand-light hover:text-brand rounded-lg hover:bg-brand/5 transition-colors"
-            >
-              {link.label}
-            </a>
+                key={link.href}
+                href={link.href}
+                onClick={(e) => scrollTo(e, link.href)}
+                className={`px-3 py-2 text-sm rounded-lg transition-colors underline decoration-2 underline-offset-4 ${
+                  activeSection === link.href.replace("#", "")
+                    ? "text-brand decoration-brand"
+                    : "text-brand-light hover:text-brand hover:bg-brand/5 decoration-transparent hover:decoration-brand"
+                }`}
+              >
+                {link.label}
+              </a>
           ))}
-          <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ml-2 inline-flex items-center gap-1.5 bg-brand text-white text-sm font-medium px-4 py-2 rounded-lg hover:bg-brand-light transition-colors"
-          >
-            Agendar
-          </a>
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 inline-flex items-center gap-1.5 bg-brand text-white text-sm font-medium px-4 py-2 rounded-lg hover:bg-brand-light transition-colors hover:scale-[1.02] active:scale-[0.98]"
+            >
+              Agendar
+            </a>
         </nav>
 
         <button
+          ref={menuToggleRef}
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden flex items-center justify-center w-11 h-11 rounded-lg text-brand-light hover:text-brand hover:bg-brand/5 transition-colors"
           aria-label="Abrir menu"
@@ -82,8 +138,12 @@ export default function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className="px-4 py-3 text-brand-light hover:text-brand hover:bg-brand/5 rounded-lg transition-colors text-sm"
+                onClick={(e) => scrollTo(e, link.href)}
+                className={`px-4 py-3 rounded-lg transition-colors text-sm ${
+                  activeSection === link.href.replace("#", "")
+                    ? "text-brand bg-brand/5"
+                    : "text-brand-light hover:text-brand hover:bg-brand/5"
+                }`}
               >
                 {link.label}
               </a>
@@ -93,9 +153,9 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
-              className="mt-2 flex items-center justify-center gap-2 bg-brand text-white text-sm font-medium px-4 py-3 rounded-lg hover:bg-brand-light transition-colors"
+              className="mt-2 flex items-center justify-center gap-2 bg-brand text-white text-sm font-medium px-4 py-3.5 rounded-lg hover:bg-brand-light transition-colors"
             >
-              Agendar Primeira Sessão
+              Agendar
             </a>
           </nav>
         </div>

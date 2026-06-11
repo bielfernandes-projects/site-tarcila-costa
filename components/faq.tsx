@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { faqItems } from "@/data/mock";
 
@@ -22,10 +22,8 @@ export default function FAQ() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-2xl mx-auto mb-10"
         >
-          <span className="text-accent text-sm font-semibold uppercase tracking-wider">
-            FAQ
-          </span>
-          <h2 className="font-serif text-3xl md:text-4xl text-brand mt-3 mb-4 leading-tight">
+          <div className="w-8 h-px bg-brand/10 mx-auto mb-5" />
+          <h2 className="font-serif text-3xl md:text-4xl text-brand mb-4 leading-tight">
             Perguntas Frequentes
           </h2>
           <p className="text-brand-light leading-relaxed">
@@ -45,12 +43,12 @@ export default function FAQ() {
             >
               <button
                 onClick={() => toggle(index)}
-                className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left hover:bg-brand/5 transition-colors"
+                className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left hover:bg-brand/5 transition-colors hover:scale-[1.01] active:scale-[0.99]"
                 aria-expanded={openIndex === index}
               >
-                <span className="text-brand font-medium text-sm md:text-base pr-4">
+                <h3 className="text-brand font-medium text-sm md:text-base pr-4">
                   {item.pergunta}
-                </span>
+                </h3>
                 <ChevronDown
                   size={20}
                   className={`text-brand-light flex-shrink-0 transition-transform duration-300 ${
@@ -59,24 +57,19 @@ export default function FAQ() {
                 />
               </button>
 
-              <AnimatePresence initial={false}>
-                {openIndex === index && (
-                  <motion.div
-                    key="content"
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className="overflow-hidden"
-                  >
-                    <div className="px-6 pb-5">
-                      <p className="text-brand-light leading-relaxed text-sm">
-                        {item.resposta}
-                      </p>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              <div
+                className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
+                  openIndex === index ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                }`}
+              >
+                <div className="overflow-hidden">
+                  <div className="px-6 pb-5">
+                    <p className="text-brand-light leading-relaxed text-sm">
+                      {item.resposta}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
