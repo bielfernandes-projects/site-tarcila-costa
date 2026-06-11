@@ -3,7 +3,6 @@ import Hero from "@/components/hero";
 import Sobre from "@/components/sobre";
 import Servicos from "@/components/servicos";
 import ComoFunciona from "@/components/como-funciona";
-import Depoimentos from "@/components/depoimentos";
 import FAQ from "@/components/faq";
 import Contato from "@/components/contato";
 import WhatsAppFloat from "@/components/whatsapp-float";
@@ -18,7 +17,6 @@ export default function Home() {
         <Sobre />
         <Servicos />
         <ComoFunciona />
-        <Depoimentos />
         <FAQ />
         <Contato />
       </main>

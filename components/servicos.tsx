@@ -28,7 +28,7 @@ export default function Servicos() {
           <h2 className="font-serif text-3xl md:text-4xl text-brand mt-3 mb-4 leading-tight">
             Como posso te ajudar
           </h2>
-          <p className="text-brand-light leading-relaxed">
+          <p className="text-brand-light leading-relaxed text-balance">
             Cada jornada é única. Conheça as formas de cuidado que ofereço para
             diferentes necessidades.
           </p>

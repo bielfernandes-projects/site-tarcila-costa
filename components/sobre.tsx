@@ -9,29 +9,11 @@ export default function Sobre() {
       <div className="max-w-6xl mx-auto px-5">
         <div className="grid md:grid-cols-5 gap-12 md:gap-16 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="md:col-span-2"
-          >
-            <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-sand-dark relative shadow-lg">
-              <Image
-                src="/images/sobre.webp"
-                alt="Tarcila Costa - Psicóloga"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 40vw"
-              />
-            </div>
-          </motion.div>
-
-          <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-            className="md:col-span-3"
+            className="md:col-span-3 md:order-2"
           >
             <span className="text-accent text-sm font-semibold uppercase tracking-wider">
               A Profissional
@@ -74,6 +56,24 @@ export default function Sobre() {
                   {tag}
                 </span>
               ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+            className="md:col-span-2 md:order-1"
+          >
+            <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-sand-dark relative shadow-lg">
+              <Image
+                src="/images/sobre.webp"
+                alt="Tarcila Costa - Psicóloga"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 40vw"
+              />
             </div>
           </motion.div>
         </div>

@@ -72,7 +72,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
             className="relative"
           >
-            <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-sand-dark shadow-2xl">
+            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-sand-dark shadow-2xl">
               <Image
                 src="/images/hero.webp"
                 alt="Tarcila Costa - Psicóloga"

@@ -9,7 +9,6 @@ const navLinks = [
   { label: "Sobre", href: "#sobre" },
   { label: "Serviços", href: "#servicos" },
   { label: "Avaliação", href: "#como-funciona" },
-  { label: "Depoimentos", href: "#depoimentos" },
   { label: "FAQ", href: "#faq" },
   { label: "Contato", href: "#contato" },
 ];
@@ -19,18 +18,18 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-sand/90 backdrop-blur-md border-b border-sand-dark">
-      <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-3">
+      <div className="max-w-6xl mx-auto px-5 h-16 flex items-center">
+        <a href="#" className="flex items-center gap-3 flex-shrink-0">
           <div className="relative w-10 h-10 rounded-full bg-brand/10 flex items-center justify-center overflow-hidden">
             <Image
-              src="/images/logo-tarcila.png"
+              src="/images/logo-tarcila.png?v=2"
               alt="Tarcila Costa"
               width={40}
               height={40}
               className="object-contain"
             />
           </div>
-          <div className="hidden sm:block">
+          <div className="hidden md:block">
             <span className="font-serif text-lg text-brand font-semibold leading-tight block">
               Tarcila Costa
             </span>
@@ -38,7 +37,16 @@ export default function Header() {
           </div>
         </a>
 
-        <nav className="hidden md:flex items-center gap-1">
+        <div className="flex-1 flex justify-center md:hidden">
+          <div className="flex flex-col items-center leading-tight">
+            <span className="font-serif text-lg text-brand font-semibold">
+              Tarcila Costa
+            </span>
+            <span className="text-xs text-brand-light">{contatoInfo.crp}</span>
+          </div>
+        </div>
+
+        <nav className="hidden md:flex items-center gap-1 ml-auto">
           {navLinks.map((link) => (
             <a
               key={link.href}

@@ -4,12 +4,6 @@ export interface Servico {
   icone: string;
 }
 
-export interface Depoimento {
-  iniciais: string;
-  texto: string;
-  foco: string;
-}
-
 export interface FAQItem {
   pergunta: string;
   resposta: string;
@@ -48,27 +42,6 @@ export const servicos: Servico[] = [
   },
 ];
 
-export const depoimentos: Depoimento[] = [
-  {
-    iniciais: "A. S.",
-    texto:
-      "Cheguei sem esperanças depois de anos de terapia. A TCC com a Tarcila foi completamente diferente — em poucos meses consegui identificar padrões que me travavam desde a adolescência. Minha ansiedade, que era diária, hoje é algo que sei lidar.",
-    foco: "Alívio da ansiedade",
-  },
-  {
-    iniciais: "M. L.",
-    texto:
-      "Levei meu filho para avaliação neuropsicológica porque a escola insistia que ele 'não se esforçava'. O laudo revelou TDAH. Hoje ele tem o acompanhamento certo e está lendo com prazer. A Tarcila nos deu clareza e direção.",
-    foco: "Clareza no diagnóstico infantil",
-  },
-  {
-    iniciais: "C. R.",
-    texto:
-      "O atendimento on-line me surpreendeu. Achava que não ia me conectar, mas a Tarcila cria um espaço tão acolhedor que a distância desaparece. Terapia transformadora, mesmo pela tela.",
-    foco: "Terapia on-line eficaz",
-  },
-];
-
 export const faqItems: FAQItem[] = [
   {
     pergunta: "Como funciona a Terapia Cognitivo-Comportamental (TCC)?",
@@ -83,12 +56,12 @@ export const faqItems: FAQItem[] = [
   {
     pergunta: "Você atende convênio?",
     resposta:
-      "Não atendo por convênios, mas emito nota fiscal para que você solicite reembolso junto ao seu plano de saúde, caso ele cubra sessões de psicologia. Consulte seu plano para verificar as condições de reembolso.",
+      "Não atendo por convênios mas emito recibos para Receita Saúde. Consulte seu plano para verificar as condições de reembolso.",
   },
   {
     pergunta: "Quanto tempo dura cada sessão?",
     resposta:
-      "As sessões de psicoterapia duram aproximadamente 50 minutos. Já a Avaliação Neuropsicológica envolve múltiplos encontros (em média 4 a 6 sessões de 60 a 90 minutos cada), dependendo da bateria de testes necessária.",
+      "As sessões de psicoterapia duram aproximadamente 50 minutos. Já a Avaliação Neuropsicológica envolve múltiplos encontros (em média 10 a 15 sessões de 50 a 90 minutos cada), dependendo da demanda da avaliação.",
   },
   {
     pergunta: "O atendimento on-line tem a mesma eficácia do presencial?",
@@ -98,7 +71,7 @@ export const faqItems: FAQItem[] = [
   {
     pergunta: "Preciso de encaminhamento médico para fazer avaliação neuropsicológica?",
     resposta:
-      "Não é obrigatório, mas é recomendado. Muitos pacientes chegam por encaminhamento de neurologistas, psiquiatras ou pedagogos. Se tiver dúvidas, entre em contato que esclareço seu caso específico.",
+      "Não é obrigatório, mas é comum. Muitos pacientes chegam por encaminhamento de neurologistas, psiquiatras ou pedagogos. Se tiver dúvidas, entre em contato que esclareço seu caso específico.",
   },
 ];
 
@@ -128,6 +101,9 @@ export const passosAvaliacao: PassoAvaliacao[] = [
       "Entrega do laudo completo com recomendações personalizadas. Você sai de lá com um mapa claro dos próximos passos.",
   },
 ];
+
+export const whatsappLinkAvaliacao =
+  "https://wa.me/5585997025154?text=Ol%C3%A1%21+Vi+o+site+da+Psic%C3%B3loga+Tarcila+Costa+e+gostaria+de+entender+mais+sobre+a+avalia%C3%A7%C3%A3o+neuropsicol%C3%B3gica.";
 
 export const whatsappLink =
   "https://wa.me/5585997025154?text=Ol%C3%A1%21+Vi+o+site+da+Psic%C3%B3loga+Tarcila+Costa+e+gostaria+de+saber+mais+sobre+os+atendimentos.";

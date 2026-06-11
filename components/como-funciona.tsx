@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
-import { passosAvaliacao } from "@/data/mock";
+import { Check, ArrowRight } from "lucide-react";
+import { passosAvaliacao, whatsappLinkAvaliacao } from "@/data/mock";
 
 export default function ComoFunciona() {
   return (
@@ -59,6 +59,24 @@ export default function ComoFunciona() {
             ))}
           </div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="text-center mt-12"
+        >
+          <a
+            href={whatsappLinkAvaliacao}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 bg-brand text-white font-medium px-8 py-4 rounded-xl hover:bg-brand-light transition-all shadow-lg shadow-brand/20 hover:shadow-xl hover:shadow-brand/30 text-base"
+          >
+            Quero saber mais sobre a Avaliação
+            <ArrowRight size={20} />
+          </a>
+        </motion.div>
       </div>
     </section>
   );
